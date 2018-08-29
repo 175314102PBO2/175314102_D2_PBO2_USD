@@ -10,5 +10,6 @@ package MODEL;
  * @author admin
  */
 public class Pasien {
+    private String Nama;
     
 }
