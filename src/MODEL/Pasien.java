@@ -11,5 +11,14 @@ package MODEL;
  */
 public class Pasien {
     private String Nama;
+
+    public void setNama(String Nama) {
+        this.Nama = Nama;
+    }
+
+    public String getNama() {
+        return Nama;
+    }
+    
     
 }
