@@ -14,6 +14,7 @@ private String Nama;
 private String Alamat;
 private String TempatLahir;
 private String noRekamMedis;
+private String Namaa;
 
     public String getNama() {
         return Nama;
