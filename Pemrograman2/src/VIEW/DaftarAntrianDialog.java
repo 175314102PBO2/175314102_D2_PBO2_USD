@@ -40,7 +40,7 @@ public class DaftarAntrianDialog extends JDialog{
         this.add(NamaLabel);
         
         NamaText = new JTextField();
-        NamaText.setBounds(70, 40, 50, 25);
+        NamaText.setBounds(70, 40, 100, 25);
         this.add(NamaText);
         
         
@@ -49,7 +49,7 @@ public class DaftarAntrianDialog extends JDialog{
         this.add(NoRekamMedisLabel);
         
         NoRekamMedisText = new JTextField();
-        NoRekamMedisText.setBounds(150, 70, 300, 25);
+        NoRekamMedisText.setBounds(150, 70, 200, 25);
         this.add(NoRekamMedisText);
         
         AlamatLabel = new JLabel (" ALAMAT ");;
@@ -61,7 +61,7 @@ public class DaftarAntrianDialog extends JDialog{
         this.add(AlamatText);
         
         SaveButton = new JButton(" SIMPAN ");
-        SaveButton.setBounds(60, 350, 90, 30);
+        SaveButton.setBounds(150, 150, 90, 30);
         this.add(SaveButton);
         
     }
