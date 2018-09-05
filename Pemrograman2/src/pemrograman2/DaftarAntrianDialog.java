@@ -39,4 +39,4 @@ public class DaftarAntrianDialog extends JDialog{
     }
 }
     
-}
+
