@@ -20,6 +20,7 @@ public class DaftarAntrianDialog extends JDialog{
     private JLabel AlamatLabel;
     private JLabel NoRekamMedisLabel;
     private JTextField NoRekamMedisText;
+    private JTextField AlamatText;
     private JTextField JudulText;
     private JTextField NamaText;
     private JButton SaveButton;
@@ -48,12 +49,16 @@ public class DaftarAntrianDialog extends JDialog{
         this.add(NoRekamMedisLabel);
         
         NoRekamMedisText = new JTextField();
-        NoRekamMedisText.setBounds(100, 70, 300, 25);
+        NoRekamMedisText.setBounds(150, 70, 300, 25);
         this.add(NoRekamMedisText);
         
         AlamatLabel = new JLabel (" ALAMAT ");;
         AlamatLabel.setBounds(10, 90, 60, 25);
         this.add(AlamatLabel);
+        
+        AlamatText = new JTextField();
+        AlamatText.setBounds(80, 90, 60, 25);
+        this.add(AlamatText);
         
         SaveButton = new JButton(" SIMPAN ");
         SaveButton.setBounds(60, 350, 90, 30);
