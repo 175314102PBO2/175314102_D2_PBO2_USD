@@ -14,7 +14,7 @@ import VIEW.DaftarAntrianDialog;
 public class TESTVIEW {
     public static void main(String[] args) {
         DaftarAntrianDialog test = new DaftarAntrianDialog();
-        test.setSize(500, 500);
+        test.setSize(400, 500);
         test.setVisible(true);
     }
 }
