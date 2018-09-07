@@ -10,42 +10,73 @@ package MODEL;
  * @author admin
  */
 public class Pasien {
-private String Nama;
-private String Alamat;
-private String TempatLahir;
-private String noRekamMedis;
-private String Namaa;
-
-    public String getNama() {
-        return Nama;
+     private String noRekamMedis,nama,alamat,tempatLahir;
+    private int tanggalLahir,bulanLahir,tahunLahir;
+    
+      
+    public Pasien(){
+        
     }
-
-    public void setNama(String Nama) {
-        this.Nama = Nama;
-    }
-
-    public String getAlamat() {
-        return Alamat;
-    }
-
-    public void setAlamat(String Alamat) {
-        this.Alamat = Alamat;
-    }
-
-    public String getTempatLahir() {
-        return TempatLahir;
-    }
-
-    public void setTempatLahir(String TempatLahir) {
-        this.TempatLahir = TempatLahir;
-    }
+    
 
     public String getNoRekamMedis() {
         return noRekamMedis;
     }
 
-    public void setNoRekamMedis(String noRekamMedis) {
-        this.noRekamMedis = noRekamMedis;
+    public void setNoRekamMedis(String noRekamMedis) throws NumberFormatException {
+        if (noRekamMedis.toCharArray().length>=6) {
+            this.noRekamMedis = noRekamMedis;
+        }else{
+                throw new NumberFormatException("Nomor Rekam Medis Salah");
+                }
     }
 
+    public String getNama() {
+        return nama;
+    }
+
+    public void setNama(String nama) {
+        this.nama = nama;
+    }
+
+    public String getAlamat() {
+        return alamat;
+    }
+
+    public void setAlamat(String alamat) {
+        this.alamat = alamat;
+    }
+
+    public String getTempatLahir() {
+        return tempatLahir;
+    }
+
+    public void setTempatLahir(String tempatLahir) {
+        this.tempatLahir = tempatLahir;
+    }
+
+    public int getTanggalLahir() {
+        return tanggalLahir;
+    }
+
+    public void setTanggalLahir(int tanggalLahir) {
+        this.tanggalLahir = tanggalLahir;
+    }
+
+    public int getBulanLahir() {
+        return bulanLahir;
+    }
+
+    public void setBulanLahir(int bulanLahir) {
+        this.bulanLahir = bulanLahir;
+    }
+
+    public int getTahunLahir() {
+        return tahunLahir;
+    }
+
+    public void setTahunLahir(int tahunLahir) {
+        this.tahunLahir = tahunLahir;
+    }
+   
 }
