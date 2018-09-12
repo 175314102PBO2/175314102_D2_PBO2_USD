@@ -52,13 +52,7 @@ public class Pasien {
         this.nik = noRekamMedis;
     }
 
-    public Pasien[] getDaftarPasienKlinik() {
-        return daftarPasienKlinik;
-    }
-
-    public void setDaftarPasienKlinik(Pasien[] daftarPasienKlinik) {
-        this.daftarPasienKlinik = daftarPasienKlinik;
-    }
+    
 
     public String getNoRekamMedis() {
         return noRekamMedis;
