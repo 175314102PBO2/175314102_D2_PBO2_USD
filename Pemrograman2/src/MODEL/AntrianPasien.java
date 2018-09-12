@@ -11,7 +11,9 @@ package MODEL;
  */
 public class AntrianPasien {
 
-    private int tanggalAntrian, bulanAntrian, tahunAntrian;
+    private int tanggalAntrian;
+    private int bulanAntrian;
+    private int tahunAntrian;
     private Klinik klinik;
     private Pasien daftarPasien[];
 
