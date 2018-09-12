@@ -5,6 +5,8 @@
  */
 package MODEL;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author admin
@@ -19,10 +21,13 @@ public class Pasien {
     private int bulanLahir;
     private int tahunLahir;
     private String nik;
-    Pasien daftarPasienKlinik[];
 
-    public void tambahPasienBaru(Pasien Pasien) {
-     
+    public static ArrayList<Pasien> daftarPasienKlinik =
+            new ArrayList<Pasien>();
+
+    public static void tambahPasienBaru(Pasien Pasien) {
+        daftarPasienKlinik.add(Pasien);
+
     }
 
     public static Pasien cariPasien(String noRekamMedis) {
