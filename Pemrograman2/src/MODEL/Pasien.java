@@ -18,6 +18,14 @@ public class Pasien {
     private int tanggalLahir;
     private int bulanLahir;
     private int tahunLahir;
+    private String nik;
+    Pasien []daftarPasienKlinik;
+    
+    public void tambahPasienBaru(Pasien pasien){  
+    }
+    public static Pasien cariPasien (String noRekamMedis){
+        return null;
+    }
 
     public Pasien() {
 
