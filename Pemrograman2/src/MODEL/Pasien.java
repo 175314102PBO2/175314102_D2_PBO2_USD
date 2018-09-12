@@ -30,7 +30,7 @@ public class Pasien {
 
     }
 
-    public static Pasien cariPasien(String noRekamMedis) {
+    public static Pasien cariPasien(String noRM) {
         return null;
     }
 
