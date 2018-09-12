@@ -10,7 +10,8 @@ package MODEL;
  * @author RamaEka
  */
 public class Klinik {
-      private String idKlinik, nama;
+      private String idKlinik;
+      private String nama;
 
     public String getIdKlinik() {
         return idKlinik;
