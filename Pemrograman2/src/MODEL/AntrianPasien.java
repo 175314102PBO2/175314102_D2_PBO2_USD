@@ -5,14 +5,14 @@
  */
 package MODEL;
 
-
 /**
  *
  * @author RamaEka
  */
 public class AntrianPasien {
- private int tanggalAntrian,bulanAntrian, tahunAntrian; 
- private Klinik klinik;
+
+    private int tanggalAntrian, bulanAntrian, tahunAntrian;
+    private Klinik klinik;
     private Pasien daftarPasien[];
 
     public Klinik getKlinik() {
@@ -30,5 +30,5 @@ public class AntrianPasien {
     public void setDaftarPasien(Pasien[] daftarPasien) {
         this.daftarPasien = daftarPasien;
     }
- 
+
 }
