@@ -30,7 +30,13 @@ public class Pasien {
 
     }
 
-    public static Pasien cariPasien(String noRM) {
+    public static Pasien cariPasien(String string) {
+        for (int i = 0; i < daftarPasienKlinik.size();i++) {
+            if (daftarPasienKlinik.get(i).noRekamMedis== string) {
+                return daftarPasienKlinik.get(i);
+            }
+            
+        }
         return null;
     }
 
