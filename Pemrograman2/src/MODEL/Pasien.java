@@ -10,25 +10,29 @@ package MODEL;
  * @author admin
  */
 public class Pasien {
-     private String noRekamMedis,nama,alamat,tempatLahir;
-    private int tanggalLahir,bulanLahir,tahunLahir;
-    
-      
-    public Pasien(){
-        
+
+    private String noRekamMedis;
+    private String nama;
+    private String alamat;
+    private String tempatLahir;
+    private int tanggalLahir;
+    private int bulanLahir;
+    private int tahunLahir;
+
+    public Pasien() {
+
     }
-    
 
     public String getNoRekamMedis() {
         return noRekamMedis;
     }
 
     public void setNoRekamMedis(String noRekamMedis) throws NumberFormatException {
-        if (noRekamMedis.toCharArray().length>=6) {
+        if (noRekamMedis.toCharArray().length >= 6) {
             this.noRekamMedis = noRekamMedis;
-        }else{
-                throw new NumberFormatException("Nomor Rekam Medis Salah");
-                }
+        } else {
+            throw new NumberFormatException("Nomor Rekam Medis Salah");
+        }
     }
 
     public String getNama() {
@@ -78,5 +82,5 @@ public class Pasien {
     public void setTahunLahir(int tahunLahir) {
         this.tahunLahir = tahunLahir;
     }
-   
+
 }
