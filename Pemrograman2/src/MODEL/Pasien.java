@@ -19,16 +19,23 @@ public class Pasien {
     private int bulanLahir;
     private int tahunLahir;
     private String nik;
-    Pasien []daftarPasienKlinik;
-    
-    public void tambahPasienBaru(Pasien pasien){  
+    Pasien[] daftarPasienKlinik;
+
+    public void tambahPasienBaru(Pasien pasien) {
     }
-    public static Pasien cariPasien (String noRekamMedis){
+
+    public static Pasien cariPasien(String noRekamMedis) {
         return null;
     }
 
-    public Pasien() {
-
+    public Pasien(String nama, String alamat, String tempatLahir, int tanggalLahir, int bulanLahir, int tahunLahir, String nik) {
+        this.nama = nama;
+        this.alamat = alamat;
+        this.tempatLahir = tempatLahir;
+        this.tanggalLahir = tanggalLahir;
+        this.bulanLahir = bulanLahir;
+        this.tahunLahir = tahunLahir;
+        this.nik = nik;
     }
 
     public String getNoRekamMedis() {
