@@ -10,6 +10,7 @@ package MODEL;
  * @author ACER
  */
 public class Dokter {
+
     private String NomorPegawai;
     private String nama;
     private String alamat;
@@ -52,8 +53,13 @@ public class Dokter {
         return tanggallahir;
     }
 
-    public void setTanggallahir(int tanggallahir) {
-        this.tanggallahir = tanggallahir;
+    public void setTanggallahir(int tanggallahir) throws Exception {
+        if (tanggallahir > 0) {
+            if (tanggallahir <= 31) {
+            }
+        } else {
+            throw new Exception("Tanggal Tidak Terdeteksi...");
+        }
     }
-    
+
 }
