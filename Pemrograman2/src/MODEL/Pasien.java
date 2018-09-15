@@ -100,8 +100,12 @@ public class Pasien {
         return tanggalLahir;
     }
 
-    public void setTanggalLahir(int tanggalLahir) {
-        this.tanggalLahir = tanggalLahir;
+    public void setTanggalLahir(int tanggalLahir) throws Exception {
+        if (tanggalLahir > 0 && tanggalLahir < 31) {
+            this.tanggalLahir = tanggalLahir;
+        } else {
+            throw new Exception(" Salah ");
+        }
     }
 
     public int getBulanLahir() {
