@@ -108,8 +108,12 @@ public class Pasien {
         return bulanLahir;
     }
 
-    public void setBulanLahir(int bulanLahir) {
-        this.bulanLahir = bulanLahir;
+    public void setBulanLahir(int bulanLahir) throws Exception{
+          if (bulanLahir > 0 && bulanLahir < 13) {
+            this.bulanLahir = bulanLahir;
+        } else {
+            throw new Exception(" Bulan Lahir Anda Tidak Terdeteksi "); 
+        }
     }
 
     public int getTahunLahir() {
