@@ -8,6 +8,7 @@ package VIEW;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -33,6 +34,7 @@ public class DaftarAntrianDialog extends JFrame implements ActionListener{
     private JTextField AlamatText;
     private JTextField JudulText;
     private JTextField NamaText;
+    private JComboBox TanggalLahir,BulanLahir,TahunLahir;
     private JButton SaveButton;
 
     public DaftarAntrianDialog() {
@@ -89,6 +91,13 @@ public class DaftarAntrianDialog extends JFrame implements ActionListener{
         NoRekamMedisText = new JTextField();
         NoRekamMedisText.setBounds(150, 70, 200, 25);
         this.add(NoRekamMedisText);
+        
+        JComboBox TanggalLahir = new JComboBox();
+        for (int i = 1; i <=31; i++) {
+           TanggalLahir.addItem(i);
+        }
+        TanggalLahir.setBounds(45,105,67,20);
+        this.add(TanggalLahir);
         
         AlamatLabel = new JLabel (" ALAMAT ");;
         AlamatLabel.setBounds(10, 90, 60, 25);
