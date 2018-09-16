@@ -29,15 +29,26 @@ public class Pasien {
         daftarPasienKlinik.add(Pasien);
 
     }
-
-    public static Pasien cariPasien(String string) {
-        for (int i = 0; i < daftarPasienKlinik.size();i++) {
-            if (daftarPasienKlinik.get(i).noRekamMedis== string) {
-                return daftarPasienKlinik.get(i);
+//dibawah ini adalah cara lain untuk cari pasien
+//    public static Pasien cariPasien(String string) {
+//        for (int i = 0; i <= daftarPasienKlinik.size();i++) {
+//            if (daftarPasienKlinik.get(i).noRekamMedis== string) {
+//                return daftarPasienKlinik.get(i);
+//            }
+//            
+//        }
+//        return null;
+//    }
+        public static Pasien cariPasien(String NoRM) {
+        Pasien result = null;
+        boolean found = false;
+        for (int i = 0; i < daftarPasienKlinik.size(); i++) {
+            if (daftarPasienKlinik.get(i).getNik().equals(NoRM)) {
+                found = true;
+                result = daftarPasienKlinik.get(i);
             }
-            
         }
-        return null;
+            return result;
     }
 
     public Pasien(String nama, String alamat, String tempatLahir, int tanggalLahir, int bulanLahir, int tahunLahir, String nik) {
