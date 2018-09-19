@@ -20,6 +20,15 @@ public class AntrianPasien {
     public void mendaftar (Pasien pasien){
         
     }
+    public static void Mendaftar(Pasien pasie, int Bulan, int Tahun){
+        
+    }
+    //public static AntrianPasien cariPasien(String noRM){
+      //  return null;
+    //}
+//    public static Pasien cariPasien(String noRM, int Tanggal, int Bulan, int Tahun){
+//        
+//    }
 
     public Klinik getKlinik() {
         return klinik;
