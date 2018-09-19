@@ -17,11 +17,8 @@ public class AntrianPasien {
     private Klinik klinik;
     private Pasien []daftarPasienAntri;
     
-    public void mendaftar (Pasien pasien){
-        
-    }
     public static void Mendaftar(Pasien pasien, int Bulan, int Tahun){
-        
+        Pasien.tambahPasienBaru(pasien);
     }
     //public static AntrianPasien cariPasien(String noRM){
       //  return null;
