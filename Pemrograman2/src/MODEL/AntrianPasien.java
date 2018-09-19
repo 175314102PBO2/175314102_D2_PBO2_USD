@@ -29,6 +29,9 @@ public class AntrianPasien {
 //    public static Pasien cariPasien(String noRM, int Tanggal, int Bulan, int Tahun){
 //        
 //    }
+  //  public static void buatAntrian (int Tanggal, int Bulan, int Tahun, Klinik klinik){
+        
+    //}
 
     public Klinik getKlinik() {
         return klinik;
