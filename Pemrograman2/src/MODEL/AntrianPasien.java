@@ -20,7 +20,7 @@ public class AntrianPasien {
     public void mendaftar (Pasien pasien){
         
     }
-    public static void Mendaftar(Pasien pasie, int Bulan, int Tahun){
+    public static void Mendaftar(Pasien pasien, int Bulan, int Tahun){
         
     }
     //public static AntrianPasien cariPasien(String noRM){
