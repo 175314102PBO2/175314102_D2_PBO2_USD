@@ -16,6 +16,36 @@ public class Dokter {
     private String alamat;
     private String tempatLahir;
     private int tanggallahir;
+    private int bulanLahir;
+    private int TahunLahir;
+
+    public Dokter(String NomorPegawai, String nama, String alamat, String tempatLahir, int tanggallahir, int bulanLahir, int TahunLahir) {
+        this.NomorPegawai = NomorPegawai;
+        this.nama = nama;
+        this.alamat = alamat;
+        this.tempatLahir = tempatLahir;
+        this.tanggallahir = tanggallahir;
+        this.bulanLahir = bulanLahir;
+        this.TahunLahir = TahunLahir;
+    }
+
+    public int getBulanLahir() {
+        return bulanLahir;
+    }
+
+    public void setBulanLahir(int bulanLahir) {
+        this.bulanLahir = bulanLahir;
+    }
+
+    public int getTahunLahir() {
+        return TahunLahir;
+    }
+
+    public void setTahunLahir(int TahunLahir) {
+        this.TahunLahir = TahunLahir;
+    }
+    
+    
 
     public String getNomorPegawai() {
         return NomorPegawai;
