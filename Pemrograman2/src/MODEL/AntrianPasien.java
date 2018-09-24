@@ -20,8 +20,10 @@ public class AntrianPasien {
     public static void Mendaftar(Pasien pasien, int Bulan, int Tahun){
         Pasien.tambahPasienBaru(pasien);
     }
-    public static AntrianPasien cariPasien(String noRM){
-        return null;
+    public AntrianPasien cariPasien(String noRM){
+        Pasien[] p = getDaftarPasienAntri();
+        
+        return ;
     }
     public static Pasien cariPasien(String noRM, int Tanggal, int Bulan, int Tahun){
      return null;   
