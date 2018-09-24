@@ -22,8 +22,7 @@ public class Pasien {
     private int tahunLahir;
     private String nik;
 
-    public static ArrayList<Pasien> daftarPasienKlinik =
-            new ArrayList<Pasien>();
+    public static ArrayList<Pasien> daftarPasienKlinik = new ArrayList<Pasien>();
 
     public static void tambahPasienBaru(Pasien Pasien) {
         daftarPasienKlinik.add(Pasien);
@@ -39,16 +38,18 @@ public class Pasien {
 //        }
 //        return null;
 //    }
-        public static Pasien cariPasien(String NoRM) {
-        Pasien result = null;
-        boolean found = false;
+
+    public static Pasien cariPasien(String noRM) {
         for (int i = 0; i < daftarPasienKlinik.size(); i++) {
-            if (daftarPasienKlinik.get(i).getNik().equals(NoRM)) {
-                found = true;
-                result = daftarPasienKlinik.get(i);
+            // jika norekam = daftarPasienKlinik yang memanggil fetNoRekamMedis maka
+            // daftarPasienKlinik.get(i) akan direturn ke method cariPasien
+            if (noRM == null ? daftarPasienKlinik.get(i).getNoRekamMedis() == null
+                    : noRM.equals(daftarPasienKlinik.get(i).getNoRekamMedis())) {
+                return daftarPasienKlinik.get(i);
             }
         }
-            return result;
+        //Jika data tidak ditemukan maka akan direturn null
+        return null;
     }
 
     public Pasien(String nama, String alamat, String tempatLahir, int tanggalLahir, int bulanLahir, int tahunLahir, String nik) {
@@ -68,8 +69,6 @@ public class Pasien {
     public void setNik(String nik) {
         this.nik = noRekamMedis;
     }
-
-    
 
     public String getNoRekamMedis() {
         return noRekamMedis;
@@ -123,11 +122,11 @@ public class Pasien {
         return bulanLahir;
     }
 
-    public void setBulanLahir(int bulanLahir) throws Exception{
-          if (bulanLahir > 0 && bulanLahir < 13) {
+    public void setBulanLahir(int bulanLahir) throws Exception {
+        if (bulanLahir > 0 && bulanLahir < 13) {
             this.bulanLahir = bulanLahir;
         } else {
-            throw new Exception(" Bulan Lahir Anda Tidak Terdeteksi "); 
+            throw new Exception(" Bulan Lahir Anda Tidak Terdeteksi ");
         }
     }
 
