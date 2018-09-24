@@ -4,18 +4,16 @@
  * and open the template in the editor.
  */
 package MODEL;
+ 
+import java.util.ArrayList;
 
-/**
- *
- * @author RamaEka
- */
 public class AntrianPasien {
-
     private int tanggalAntrian;
     private int bulanAntrian;
     private int tahunAntrian;
     private Klinik klinik;
-    private Pasien []daftarPasienAntri;
+    private static ArrayList<Pasien> daftarPasienAntri = new ArrayList<>();
+    public static ArrayList<AntrianPasien> daftarAntrian = new ArrayList<AntrianPasien>();
     
     
 //    public static void Mendaftar(Pasien pasien, int Bulan, int Tahun){
