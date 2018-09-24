@@ -24,7 +24,7 @@ public class AntrianPasien {
         return null;
     }
     public static Pasien cariPasien(String noRM, int Tanggal, int Bulan, int Tahun){
-        
+     return null;   
     }
     public static void buatAntrian (int Tanggal, int Bulan, int Tahun, Klinik klinik){
         
