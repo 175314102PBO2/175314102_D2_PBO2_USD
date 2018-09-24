@@ -17,20 +17,21 @@ public class AntrianPasien {
     private Klinik klinik;
     private Pasien []daftarPasienAntri;
     
-    public static void Mendaftar(Pasien pasien, int Bulan, int Tahun){
-        Pasien.tambahPasienBaru(pasien);
-    }
-    public AntrianPasien cariPasien(String noRM){
-        Pasien[] p = getDaftarPasienAntri();
-        
-        return null;
-    }
-    public static Pasien cariPasien(String noRM, int Tanggal, int Bulan, int Tahun){
-     return null;   
-    }
-    public static void buatAntrian (int Tanggal, int Bulan, int Tahun, Klinik klinik){
-        
-    }
+    
+//    public static void Mendaftar(Pasien pasien, int Bulan, int Tahun){
+//        Pasien.tambahPasienBaru(pasien);
+//    }
+//    public AntrianPasien cariPasien(String noRM){
+//        Pasien[] p = getDaftarPasienAntri();
+//        
+//        return null;
+//    }
+//    public static Pasien cariPasien(String noRM, int Tanggal, int Bulan, int Tahun){
+//     return null;   
+//    }
+//    public static void buatAntrian (int Tanggal, int Bulan, int Tahun, Klinik klinik){
+//        
+//    }
 
     public Klinik getKlinik() {
         return klinik;
