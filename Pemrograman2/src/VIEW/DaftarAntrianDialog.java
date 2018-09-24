@@ -34,6 +34,7 @@ public class DaftarAntrianDialog extends JFrame implements ActionListener {
     private JLabel JudulLabel;
     private JLabel AlamatLabel;
     private JLabel Tanggallahir;
+    private JLabel TempatLahir;
     private JLabel bulanlahir;
     private JLabel tahunlahir;
     private JLabel jeniskelamin;
@@ -41,6 +42,8 @@ public class DaftarAntrianDialog extends JFrame implements ActionListener {
     private JTextField NoRekamMedisText;
     private JTextField AlamatText;
     private JTextField JudulText;
+    private JTextField NIKText;
+    private JTextField TempatLahirText;
     private JTextField NamaText;
     private JComboBox TanggalLahir, BulanLahir, TahunLahir, JenisKelamin;
     private JButton SaveButton;
@@ -62,7 +65,6 @@ public class DaftarAntrianDialog extends JFrame implements ActionListener {
             JudulLabel.setBounds(150, 10, 200, 10);
             this.add(JudulLabel);
 
-        
         }
     }
 
@@ -167,6 +169,13 @@ public class DaftarAntrianDialog extends JFrame implements ActionListener {
         SaveButton = new JButton(" SIMPAN ");
         SaveButton.setBounds(150, 310, 90, 30);
         this.add(SaveButton);
+        SaveButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent ae) {
+
+                Pasien pas = new Pasien(NamaText.getText(), AlamatText.getText(), TempatLahirText.getText(), TanggalLahir.getSelectedIndex(),
+                        bulanlahir.getSelectedIndex(), TahunLahir.getSelectedIndex(), NIKText.getText());
+            }
+        });
 
     }
 
