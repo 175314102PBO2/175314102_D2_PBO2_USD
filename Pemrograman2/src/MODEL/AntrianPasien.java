@@ -23,7 +23,7 @@ public class AntrianPasien {
     public AntrianPasien cariPasien(String noRM){
         Pasien[] p = getDaftarPasienAntri();
         
-        return ;
+        return null;
     }
     public static Pasien cariPasien(String noRM, int Tanggal, int Bulan, int Tahun){
      return null;   
