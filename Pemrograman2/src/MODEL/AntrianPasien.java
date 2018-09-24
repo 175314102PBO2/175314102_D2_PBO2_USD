@@ -20,15 +20,15 @@ public class AntrianPasien {
     public static void Mendaftar(Pasien pasien, int Bulan, int Tahun){
         Pasien.tambahPasienBaru(pasien);
     }
-    //public static AntrianPasien cariPasien(String noRM){
-      //  return null;
-    //}
-//    public static Pasien cariPasien(String noRM, int Tanggal, int Bulan, int Tahun){
-//        
-//    }
-  //  public static void buatAntrian (int Tanggal, int Bulan, int Tahun, Klinik klinik){
+    public static AntrianPasien cariPasien(String noRM){
+        return null;
+    }
+    public static Pasien cariPasien(String noRM, int Tanggal, int Bulan, int Tahun){
         
-    //}
+    }
+    public static void buatAntrian (int Tanggal, int Bulan, int Tahun, Klinik klinik){
+        
+    }
 
     public Klinik getKlinik() {
         return klinik;
