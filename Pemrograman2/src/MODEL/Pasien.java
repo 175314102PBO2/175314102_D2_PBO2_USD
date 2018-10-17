@@ -6,7 +6,13 @@
 package MODEL;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -35,7 +41,7 @@ public class Pasien {
 
     @Override
     public String toString() {
-        return nama + "\t" + alamat + "";
+        return nama + "\t" + alamat + "\n";
     }
 
 //dibawah ini adalah cara lain untuk cari pasien
@@ -147,9 +153,20 @@ public class Pasien {
         this.tahunLahir = tahunLahir;
     }
 
-    public static void simpanDaftarPasien(File file) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    public static void simpanDaftarPasien(File file) throws IOException {
+        try {
+            FileOutputStream fos = new FileOutputStream(file);
+            for (int i = 0; i < daftarPasienKlinik.size(); i++) {
+                String data = daftarPasienKlinik.get(i).toString();
+                fos.write(data.getBytes());
+            }
+            fos.close();
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(Pasien.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(Pasien.class.getName()).log(Level.SEVERE, null, ex);
+        }
+}
 
     public static void bacaDaftarPasien(File file) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
