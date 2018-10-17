@@ -26,9 +26,9 @@ public class TestStreaming {
             fos = new FileOutputStream(file);
             fos.write(data.getBytes());
         } catch (FileNotFoundException ex) {
-            Logger.getLogger(TestStreaming.class.getName()).log(Level.SEVERE.getName());
+            Logger.getLogger(TestStreaming.class.getName()).log(Level.SEVERE.getName(),null,ex);
         }catch(IOException ex){
-            Logger.getLogger(TestStreaming.class.getName()).log(Level.SEVERE);
+            Logger.getLogger(TestStreaming.class.getName()).log(Level.SEVERE.getName(),null,ex);
         }
 finally{
     
