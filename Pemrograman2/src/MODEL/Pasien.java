@@ -5,6 +5,7 @@
  */
 package MODEL;
 
+import java.io.File;
 import java.util.ArrayList;
 
 /**
@@ -12,6 +13,18 @@ import java.util.ArrayList;
  * @author admin
  */
 public class Pasien {
+
+    public static void simpanDaftarPasien(File file) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public static void bacaDaftarPasien(File file) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public static Object getDaftarPasien() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 
     private String noRekamMedis;
     private String nama;
@@ -24,10 +37,15 @@ public class Pasien {
 
     public static ArrayList<Pasien> daftarPasienKlinik = new ArrayList<Pasien>();
 
+    public Pasien() {
+     
+    }
+    
+
     public static void tambahPasienBaru(Pasien Pasien) {
         daftarPasienKlinik.add(Pasien);
-
     }
+
 
     @Override
     public String toString() {
