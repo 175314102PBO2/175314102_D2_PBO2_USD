@@ -28,6 +28,12 @@ public class Pasien {
         daftarPasienKlinik.add(Pasien);
 
     }
+
+    @Override
+    public String toString() {
+        return nama + "\t" + alamat + "";
+    }
+
 //dibawah ini adalah cara lain untuk cari pasien
 //    public static Pasien cariPasien(String string) {
 //        for (int i = 0; i <= daftarPasienKlinik.size();i++) {
@@ -38,7 +44,6 @@ public class Pasien {
 //        }
 //        return null;
 //    }
-
     public static Pasien cariPasien(String noRM) {
         for (int i = 0; i < daftarPasienKlinik.size(); i++) {
             // jika norekam = daftarPasienKlinik yang memanggil fetNoRekamMedis maka
