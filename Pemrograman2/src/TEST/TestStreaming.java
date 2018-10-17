@@ -5,8 +5,10 @@
  */
 package TEST;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -21,11 +23,12 @@ public class TestStreaming {
         try {
             File file = new File("test.txt");
             String data = "Hello World";
-            fors = new FileOutputStream(file);
+            fos = new FileOutputStream(file);
             fos.write(data.getBytes());
         } catch (FileNotFoundException ex) {
             Logger.getLogger(TestStreaming.class.getName()).log(Level.SEVERE.getName());
-        }catch{
+        }catch(IOException ex){
+            Logger.getLogger(TestStreaming.class.getName()).log(Level.SEVERE);
         }
 finally{
     
