@@ -26,14 +26,12 @@ public class Pasien {
     public static ArrayList<Pasien> daftarPasienKlinik = new ArrayList<Pasien>();
 
     public Pasien() {
-     
+
     }
-    
 
     public static void tambahPasienBaru(Pasien Pasien) {
         daftarPasienKlinik.add(Pasien);
     }
-
 
     @Override
     public String toString() {
@@ -148,7 +146,8 @@ public class Pasien {
     public void setTahunLahir(int tahunLahir) {
         this.tahunLahir = tahunLahir;
     }
-        public static void simpanDaftarPasien(File file) {
+
+    public static void simpanDaftarPasien(File file) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
