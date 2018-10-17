@@ -14,18 +14,6 @@ import java.util.ArrayList;
  */
 public class Pasien {
 
-    public static void simpanDaftarPasien(File file) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public static void bacaDaftarPasien(File file) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public static Object getDaftarPasien() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
     private String noRekamMedis;
     private String nama;
     private String alamat;
@@ -159,6 +147,17 @@ public class Pasien {
 
     public void setTahunLahir(int tahunLahir) {
         this.tahunLahir = tahunLahir;
+    }
+        public static void simpanDaftarPasien(File file) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public static void bacaDaftarPasien(File file) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public static Object getDaftarPasien() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }
