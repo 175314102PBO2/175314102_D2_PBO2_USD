@@ -7,20 +7,21 @@ package test;
 
 import MODEL.Pasien;
 import java.io.File;
+import java.io.IOException;
 
 /**
  *
  * @author admin
  */
 public class TestStream {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         Pasien test = new Pasien();
         test.setNama("puspa");
         test.setAlamat("klaten");
         
         Pasien test1 = new Pasien();
-        test.setNama("adi");
-        test.setAlamat("klaten");
+        test1.setNama("adi");
+        test1.setAlamat("klaten");
         
         System.out.println(test.toString());
         System.out.println(test1.toString());
