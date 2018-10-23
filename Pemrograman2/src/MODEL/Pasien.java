@@ -195,7 +195,34 @@ public class Pasien {
     }
 
     public static void bacaDaftarPasien(File file) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        FileInputStream fis = null;
+        Pasien tampung = new Pasien();
+        boolean nama = false;
+        boolean alamat = false;
+        String hasil = "";
+        int data;
+        try {
+            fis = new FileInputStream(file);
+            while ((data = fis.read()) > 0) {
+                if ((char) data != '\n') {
+                    if ((char) data != '\t') {
+                        hasil = hasil + daftarPasienKlinik.add(tampung);
+                    } else if (nama = false) {
+                        tampung.setNama(hasil);
+                        nama = true;
+                        hasil = "";
+                    }
+                } else if (alamat = false) {
+                    tampung.setAlamat(hasil);
+                    alamat = true;
+                    hasil = "";
+                }
+            }
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(Pasien.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(Pasien.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     public static Object getDaftarPasien() {
