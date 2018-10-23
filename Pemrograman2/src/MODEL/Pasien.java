@@ -35,6 +35,21 @@ public class Pasien {
 
     }
 
+    public Pasien(String noRekamMedis, String nama, String alamat, String tempatLahir, int tanggalLahir, int bulanLahir, int tahunLahir, String nik) {
+        this.noRekamMedis = noRekamMedis;
+        this.nama = nama;
+        this.alamat = alamat;
+        this.tempatLahir = tempatLahir;
+        this.tanggalLahir = tanggalLahir;
+        this.bulanLahir = bulanLahir;
+        this.tahunLahir = tahunLahir;
+        this.nik = nik;
+    }
+
+    public Pasien(String nama) {
+        this.nama = nama;
+    }
+
     public static void tambahPasienBaru(Pasien Pasien) {
         daftarPasienKlinik.add(Pasien);
     }
@@ -81,8 +96,12 @@ public class Pasien {
         return nik;
     }
 
-    public void setNik(String nik) {
-        this.nik = noRekamMedis;
+    public void setNik(String nik) throws Exception {
+        if (this.nik.length() == 16) {
+            this.nik = nik;
+        } else {
+            throw new Exception("NIK terdiri dari 16 digit");
+        }
     }
 
     public String getNoRekamMedis() {
@@ -154,19 +173,26 @@ public class Pasien {
     }
 
     public static void simpanDaftarPasien(File file) throws IOException {
+        FileOutputStream fos = null;
         try {
-            FileOutputStream fos = new FileOutputStream(file);
+            fos = new FileOutputStream(file, true);
             for (int i = 0; i < daftarPasienKlinik.size(); i++) {
                 String data = daftarPasienKlinik.get(i).toString();
                 fos.write(data.getBytes());
             }
-            fos.close();
         } catch (FileNotFoundException ex) {
             Logger.getLogger(Pasien.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
             Logger.getLogger(Pasien.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            try {
+                fos.close();
+            } catch (IOException ex) {
+                Logger.getLogger(Pasien.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
         }
-}
+    }
 
     public static void bacaDaftarPasien(File file) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
