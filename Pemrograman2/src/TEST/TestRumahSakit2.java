@@ -9,13 +9,14 @@ import java.util.ArrayList;
 import MODEL.Pasien;
 import MODEL.RumahSakit;
 import java.io.File;
+import java.io.IOException;
 
 /**
  *
  * @author admin
  */
 public class TestRumahSakit2 {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException, ClassNotFoundException {
         RumahSakit rs = new RumahSakit();
         
         rs.bacaObjekRumahSakit(new File("rsku.dat"));
