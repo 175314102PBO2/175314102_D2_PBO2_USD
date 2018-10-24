@@ -5,6 +5,7 @@
  */
 package MODEL;
 
+import static MODEL.Pasien.daftarPasienKlinik;
 import java.util.ArrayList;
 
 /**
@@ -15,9 +16,6 @@ public class RumahSakit {
     private String nama;
     private String alamat;
    
-    private ArrayList<Pasien> daftarPasien = new ArrayList<Pasien>();
-    private ArrayList<Klinik> daftarKlinik = new ArrayList<Klinik>();
-
     public RumahSakit() {
     }
 
@@ -25,9 +23,17 @@ public class RumahSakit {
         this.nama = nama;
         this.alamat = alamat;
     }
-    
-    public static Pasien cariPasien(String noRM){
+  
+    public static Pasien cariPasien(String noRM) {
+        for (int i = 0; i < daftarPasienKlinik.size(); i++) {
+            // jika norekam = daftarPasienKlinik yang memanggil fetNoRekamMedis maka
+            // daftarPasienKlinik.get(i) akan direturn ke method cariPasien
+            if (noRM == null ? daftarPasienKlinik.get(i).getNoRekamMedis() == null
+                    : noRM.equals(daftarPasienKlinik.get(i).getNoRekamMedis())) {
+                return daftarPasienKlinik.get(i);
+            }
+        }
+        //Jika data tidak ditemukan maka akan direturn null
         return null;
-     
     }
 }
