@@ -11,6 +11,9 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.ObjectStreamException;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -69,12 +72,12 @@ public class RumahSakit {
 
     public void bacaDaftarPasien(File file) {
         FileInputStream fis = null;
-        Pasien tampung = new Pasien();
-        boolean nama = false;
-        boolean alamat = false;
-        String hasil = "";
-        int data;
         try {
+            Pasien tampung = new Pasien();
+            boolean nama = false;
+            boolean alamat = false;
+            String hasil = "";
+            int data;
             fis = new FileInputStream(file);
             while ((data = fis.read()) > 0) {
                 if ((char) data != '\n') {
@@ -99,14 +102,32 @@ public class RumahSakit {
     }
 
     public void simpanObjekRumahSakit(File file) {
-    
+        ObjectOutputStream oos = null;
+        try {
+            oos = new ObjectOutputStream(oos);
+            for (int i = 0; i < getDaftarAntrianKlinik().size(); i++) {
+                String data = (String) getDaftarAntrianKlinik().get(i).toString();
+                oos.write(data.getBytes());
+            }
+        } catch (ObjectStreamException ex) {
+            Logger.getLogger(Pasien.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(Pasien.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            try {
+                oos.close();
+            } catch (IOException ex) {
+                Logger.getLogger(Pasien.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+        }
     }
 
-    public void bacaObjekRumahSakit(File file) {
-
+    public void bacaObjekRumahSakit(File file) throws IOException, ClassNotFoundException {
+        ObjectInputStream ois = null;
     }
 
-    public ArrayList<Pasien> getDaftarpasien() {
+    public ArrayList<Pasien> getDaftarPasien() {
         return daftarPasienKlinik;
     }
 
@@ -166,6 +187,11 @@ public class RumahSakit {
 
     public void setDaftarKlinik(ArrayList<AntrianKlinik> daftarKlinik) {
 
+    }
+
+    @Override
+    public String toString() {
+        return nama + "\t";
     }
 
 }
