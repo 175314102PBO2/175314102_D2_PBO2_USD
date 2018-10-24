@@ -15,7 +15,7 @@ public class AntrianKlinik {
     private int tahunAntrian;
     private Klinik klinik;
     private static ArrayList<Pasien> daftarPasienAntri = new ArrayList<>();
-    public static ArrayList<AntrianKlinik> daftarAntrian = new ArrayList<AntrianKlinik>();
+    public static ArrayList<AntrianKlinik> daftarAntrianKlinik = new ArrayList<AntrianKlinik>();
 
     public AntrianKlinik() {
     }
@@ -86,8 +86,8 @@ public class AntrianKlinik {
             if (tanggal == daftarPasienAntri.get(i).getTanggalLahir()
                     && bulan == daftarPasienAntri.get(i).getBulanLahir()
                     && tahun == daftarPasienAntri.get(i).getTahunLahir()
-                    && daftarAntrian.get(i).getKlinik().getIdKlinik().equalsIgnoreCase(klinik.getIdKlinik())
-                    && daftarAntrian.get(i).getKlinik().getNama().equalsIgnoreCase(klinik.getNama())) {
+                    && daftarAntrianKlinik.get(i).getKlinik().getIdKlinik().equalsIgnoreCase(klinik.getIdKlinik())
+                    && daftarAntrianKlinik.get(i).getKlinik().getNama().equalsIgnoreCase(klinik.getNama())) {
                 return i;
             }
         }
@@ -101,7 +101,7 @@ public class AntrianKlinik {
         antrian.setTahunAntrian(tahun);
         antrian.setKlinik(klinik);
         if (cariPasien(tanggal, bulan, tahun, klinik) >= 0) {
-            daftarAntrian.add(antrian);
+            daftarAntrianKlinik.add(antrian);
         } else {
             JOptionPane.showMessageDialog(null, "Antrian Sudah Ada !");
         }
