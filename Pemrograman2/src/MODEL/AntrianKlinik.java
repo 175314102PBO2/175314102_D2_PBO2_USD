@@ -95,7 +95,7 @@ public class AntrianKlinik {
     }
 
     public void buatAntrian(int tanggal, int bulan, int tahun, Klinik klinik) {
-        AntrianPasien antrian = new AntrianPasien();
+        AntrianKlinik antrian = new AntrianKlinik();
         antrian.setTanggalAntrian(tanggal);
         antrian.setBulanAntrian(bulan);
         antrian.setTahunAntrian(tahun);
