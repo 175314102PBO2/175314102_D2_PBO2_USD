@@ -101,10 +101,20 @@ public class RumahSakit {
     }
 
     public ArrayList<AntrianKlinik> getDaftarAntrianKlinik() {
-        return daftarPasienKlinik;
+        return null;
+
     }
 
     public void setDaftarAntrianKlinik(ArrayList<AntrianKlinik> daftarAntrianKlinik) {
+
+    }
+
+    public ArrayList<AntrianKlinik> getDaftarKlinik() {
+        return null;
+
+    }
+
+    public void setDaftarKlinik(ArrayList<AntrianKlinik> daftarKlinik) {
 
     }
 
