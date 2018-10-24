@@ -16,7 +16,7 @@ public class RumahSakit {
     private String alamat;
    
     private ArrayList<Pasien> daftarPasien = new ArrayList<Pasien>();
-    private ArrayList<Klinik> daftarKlinik = new ArrayList<Pasien>();
+    private ArrayList<Klinik> daftarKlinik = new ArrayList<Klinik>();
 
     public RumahSakit() {
     }
@@ -27,6 +27,7 @@ public class RumahSakit {
     }
     
     public static Pasien cariPasien(String noRM){
-        
+        return null;
+     
     }
 }
