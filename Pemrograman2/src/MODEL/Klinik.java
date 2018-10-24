@@ -5,14 +5,19 @@
  */
 package MODEL;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Melio
  */
 public class Klinik {
-      private String idKlinik;
-      private String nama;
 
+    private String idKlinik;
+    private String nama;
+
+    public static ArrayList<Klinik> daftarKlinik = new ArrayList<Klinik>();
+   
     public Klinik() {
     }
 
@@ -20,8 +25,6 @@ public class Klinik {
         this.idKlinik = idKlinik;
         this.nama = nama;
     }
-      
-      
 
     public String getIdKlinik() {
         return idKlinik;
