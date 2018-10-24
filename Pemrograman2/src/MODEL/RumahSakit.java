@@ -26,7 +26,7 @@ public class RumahSakit {
         this.alamat = alamat;
     }
 
-    public static Pasien cariPasien(String noRM) {
+    public Pasien cariPasien(String noRM) {
         for (int i = 0; i < daftarPasienKlinik.size(); i++) {
             if (noRM == null ? daftarPasienKlinik.get(i).getNoRekamMedis() == null : noRM.equals(daftarPasienKlinik.get(i).getNoRekamMedis())) {
                 return daftarPasienKlinik.get(i);
@@ -36,28 +36,76 @@ public class RumahSakit {
         return null;
     }
 
-    public static void tambahPasienBaru(Pasien test) {
+    public void tambahPasienBaru(Pasien test) {
 
     }
 
-    public static void simpanDaftarPasien(File file) {
+    public void simpanDaftarPasien(File file) {
 
     }
 
-    public static void bacaDaftarPasien(File file) {
+    public void bacaDaftarPasien(File file) {
 
     }
 
-    public static void simpanObjekRumahSakit(File file) {
+    public void simpanObjekRumahSakit(File file) {
 
     }
 
-    public static void bacaObjekRumahSakit(File file) {
+    public void bacaObjekRumahSakit(File file) {
 
     }
 
-    public static ArrayList<Pasien> getDaftarpasien() {
+    public ArrayList<Pasien> getDaftarpasien() {
         return daftarPasienKlinik;
     }
-    
+
+    public void setDaftarpasien(ArrayList<Pasien> daftarPasien) {
+
+    }
+
+    public String getNama() {
+        return nama;
+    }
+
+    public void setNama(String nama) {
+        this.nama = nama;
+    }
+
+    public String getAlamat() {
+        return alamat;
+    }
+
+    public void setAlamat(String alamat) {
+        this.alamat = alamat;
+    }
+
+    public void tambahKlinik(Klinik klinik) {
+
+    }
+
+    public Klinik cariKlinik(String namaKlinik) {
+        return null;
+    }
+
+    public void buatAntrian(int tanggal, int bulan, int tahun, Klinik klinik) {
+
+    }
+
+    public int cariAntrian(int tanggal, int bulan, int tahun, Klinik klinik) {
+        return 0;
+    }
+
+    public void daftarPasien(Pasien pasien, int tanggal, int bulan, int tahun, Klinik klinik) {
+
+    }
+
+    public ArrayList<AntrianKlinik> getDaftarAntrianKlinik() {
+        return daftarPasienKlinik;
+    }
+
+    public void setDaftarAntrianKlinik(ArrayList<AntrianKlinik> daftarAntrianKlinik) {
+
+    }
+
 }
