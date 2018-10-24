@@ -225,8 +225,8 @@ public class Pasien {
         }
     }
 
-    public static Object getDaftarPasien() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public static ArrayList<Pasien> getDaftarpasienKlinik() {
+        return daftarPasienKlinik;
     }
 
 }
