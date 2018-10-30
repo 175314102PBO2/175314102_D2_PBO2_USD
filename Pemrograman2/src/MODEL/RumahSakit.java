@@ -27,6 +27,10 @@ public class RumahSakit {
     private String nama;
     private String alamat;
 
+    private ArrayList<Pasien> daftarPasien = new ArrayList<Pasien>();
+    private ArrayList<Klinik> daftarKlinik = new ArrayList<Klinik>();
+    private ArrayList<AntrianKlinik> daftarAntrianKlinik = new ArrayList<AntrianKlinik>();
+
     public RumahSakit() {
     }
 
@@ -156,11 +160,28 @@ public class RumahSakit {
     }
 
     public Klinik cariKlinik(String namaKlinik) {
+        for (int i = 0; i < daftarKlinik.size(); i++) {
+            if (daftarKlinik.get(i).getNama().equalsIgnoreCase(namaKlinik)) {
+                return daftarKlinik.get(i);
+            }
+        }
         return null;
     }
 
     public void buatAntrian(int tanggal, int bulan, int tahun, Klinik klinik) {
-
+        AntrianKlinik antrian = new AntrianKlinik();
+        antrian.setTanggalAntrian(tanggal);
+        antrian.setBulanAntrian(bulan);
+        antrian.setTahunAntrian(tahun);
+        antrian.setKlinik(klinik);
+        // cari antrian dalam list daftar antri
+        if (cariAntrian(tanggal, bulan, tahun, klinik) < 0) {
+            // tambah dalam list antrian
+            daftarPasienKlinik.add(antrian);
+        } else {
+            System.out.println("Antrian " + klinik.getNama() + " Sudah Ada");
+            System.out.println("");
+        }
     }
 
     public int cariAntrian(int tanggal, int bulan, int tahun, Klinik klinik) {
