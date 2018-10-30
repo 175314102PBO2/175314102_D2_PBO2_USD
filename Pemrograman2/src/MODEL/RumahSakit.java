@@ -105,30 +105,31 @@ public class RumahSakit {
         }
     }
 
-    public void simpanObjekRumahSakit(File file) {
-        ObjectOutputStream oos = null;
-        try {
-            oos = new ObjectOutputStream(oos);
-            for (int i = 0; i < getDaftarAntrianKlinik().size(); i++) {
-                String data = (String) getDaftarAntrianKlinik().get(i).toString();
-                oos.write(data.getBytes());
-            }
-        } catch (ObjectStreamException ex) {
-            Logger.getLogger(Pasien.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (IOException ex) {
-            Logger.getLogger(Pasien.class.getName()).log(Level.SEVERE, null, ex);
-        } finally {
-            try {
-                oos.close();
-            } catch (IOException ex) {
-                Logger.getLogger(Pasien.class.getName()).log(Level.SEVERE, null, ex);
-            }
-
-        }
+    public void simpanObjekRumahSakit(File file) throws IOException {
+       try {
+            FileOutputStream fos = new FileOutputStream(file);
+            ObjectOutputStream os = new ObjectOutputStream(fos);
+            os.writeObject(this);
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(RumahSakit.class.getName()).log(Level.SEVERE, null, ex);
+}
     }
 
-    public void bacaObjekRumahSakit(File file) throws IOException, ClassNotFoundException {
-        ObjectInputStream ois = null;
+    public void bacaObjekRumahSakit(File file) throws IOException {
+         try {
+            ObjectInputStream fis = new FileInputStream(file);
+            ObjectInputStream is = new ObjectInputStream(fis);
+            RumahSakit rs = (RumahSakit) is.readObject();
+            this.nama = rs.nama;
+            this.alamat = rs.alamat;
+            this.daftarAntrianKlinik = rs.daftarAntrianKlinik;
+            this.daftarKlinik = rs.daftarKlinik;
+            this.daftarPasien = rs.daftarPasien;
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(RumahSakit.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(RumahSakit.class.getName()).log(Level.SEVERE, null, ex);
+}
     }
 
     public ArrayList<Pasien> getDaftarPasien() {
@@ -177,7 +178,7 @@ public class RumahSakit {
         // cari antrian dalam list daftar antri
         if (cariAntrian(tanggal, bulan, tahun, klinik) < 0) {
             // tambah dalam list antrian
-            daftarPasienKlinik.add(antrian);
+            daftarAntrianKlinik.add(antrian);
         } else {
             System.out.println("Antrian " + klinik.getNama() + " Sudah Ada");
             System.out.println("");
@@ -185,29 +186,44 @@ public class RumahSakit {
     }
 
     public int cariAntrian(int tanggal, int bulan, int tahun, Klinik klinik) {
-        return 0;
+        for (int i = 0; i < daftarAntrianKlinik.size(); i++) {
+            if (daftarAntrianKlinik.get(i).getTanggalAntrian() == tanggal
+                    && daftarAntrianKlinik.get(i).getBulanAntrian() == bulan
+                    && daftarAntrianKlinik.get(i).getTahunAntrian() == tahun
+                    && daftarAntrianKlinik.get(i).getKlinik().getNama().equalsIgnoreCase(klinik.getNama())
+                    && daftarAntrianKlinik.get(i).getKlinik().getIdKlinik().equalsIgnoreCase(klinik.getIdKlinik())) {
+                return i;
+            }
+        }
+        return -1;
     }
 
     public void daftarPasien(Pasien pasien, int tanggal, int bulan, int tahun, Klinik klinik) {
+        if (cariAntrian(tanggal, bulan, tahun, klinik) >= 0) {
+            daftarAntrianKlinik.get(cariAntrian(tanggal, bulan, tahun, klinik)).Mendaftar(pasien);
 
+        } else {
+            buatAntrian(tanggal, bulan, tahun, klinik);
+            daftarAntrianKlinik.get(cariAntrian(tanggal, bulan, tahun, klinik)).Mendaftar(pasien);
+        }
     }
 
     public ArrayList<AntrianKlinik> getDaftarAntrianKlinik() {
-        return null;
+        return daftarAntrianKlinik;
 
     }
 
     public void setDaftarAntrianKlinik(ArrayList<AntrianKlinik> daftarAntrianKlinik) {
+        this.daftarAntrianKlinik = daftarAntrianKlinik;
+    }
+
+    public ArrayList<Klinik> getDaftarKlinik() {
+        return daftarKlinik;
 
     }
 
-    public ArrayList<AntrianKlinik> getDaftarKlinik() {
-        return null;
-
-    }
-
-    public void setDaftarKlinik(ArrayList<AntrianKlinik> daftarKlinik) {
-
+    public void setDaftarKlinik(ArrayList<Klinik> daftarKlinik) {
+        this.daftarKlinik = daftarKlinik;
     }
 
     @Override
