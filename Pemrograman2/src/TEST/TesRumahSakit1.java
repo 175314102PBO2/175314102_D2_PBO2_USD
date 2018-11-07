@@ -8,13 +8,14 @@ package TEST;
 import java.io.File;
 import MODEL.Pasien;
 import MODEL.RumahSakit;
+import java.io.IOException;
 
 /**
  *
  * @author admin
  */
 public class TesRumahSakit1 {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         Pasien pasien1 = new Pasien();
         pasien1.setNama("Puspa");
         pasien1.setAlamat("klaten");
