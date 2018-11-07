@@ -117,7 +117,7 @@ public class RumahSakit {
 
     public void bacaObjekRumahSakit(File file) throws IOException {
          try {
-            ObjectInputStream fis = new FileInputStream(file);
+            FileInputStream fis = new FileInputStream(file);
             ObjectInputStream is = new ObjectInputStream(fis);
             RumahSakit rs = (RumahSakit) is.readObject();
             this.nama = rs.nama;
